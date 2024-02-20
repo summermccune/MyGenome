@@ -16,7 +16,7 @@ Take screenshots of output files:
 
 ## 2. Ran trimmomatic
 ```bash
-java -jar...
+java -jar ~/sequences/trimmomatic-0.38.jar PE -threads 2 -phred33 -trimlog UFVPY210_errorlog.txt UFVPY210_1.fq.gz UFVPY210_2.fq.gz UFVPY210_1_paired.fq.gz UFVPY210_1_unpaired.fq.gz UFVPY210_2_paired.fq.gz UFVPY210_2_unpared.fq.gz ILLUMINACLIP:adaptors.fasta:2:30:10 SLIDINGWINDOW:20:20 MINLEN:120
 ```
 
 ## 3. Count number of forward reads remaining

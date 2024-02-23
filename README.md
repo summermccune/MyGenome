@@ -23,3 +23,5 @@ java -jar ~/sequences/trimmomatic-0.38.jar PE -threads 2 -phred33 -trimlog UFVPY
 ```
 grep ....
 ```
+
+![filename.png](/data/filename.png)

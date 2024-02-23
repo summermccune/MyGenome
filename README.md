@@ -21,7 +21,11 @@ java -jar ~/sequences/trimmomatic-0.38.jar PE -threads 2 -phred33 -trimlog UFVPY
 
 ## 3. Count number of forward reads remaining
 ```
-grep ....
+zgrep '' UFVPY210_1_paired.fq.gz | zgrep AGGCAGAAAT+ATAGAGAGGT -A 1 | zgrep -v AGGCAGAAAT | zgrep -v ^- | zgrep '[AGTCN]' -o | wc -l
 ```
 
-![filename.png](/data/filename.png)
+## 4. Count number of bases
+```bash
+cat UFVPY210_1_paired.fq.gz UFVPY210_2_paired.fq.gz | zgrep '' | zgrep AGGCAGAAAT+ATAGAGAGGT -A 1 | zgrep -v AGGCAGAAAT | zgrep -v ^- | zgrep '[AGTCN]' -o | wc -l
+```
+

@@ -98,5 +98,7 @@ awk '$4/$3 > 0.9 {print $2 ",mitochondrion"}' B71v2sh.UFVPY210.BLAST > UFVPY210_
 ```bash
 augustus --species=magnaporthe_grisea --gff3=on --singlestrand=true --progress=true ../snap/UFVPY210_final.fasta > UFVPY210-augustus.gff3
 ```
+![Augustus result](Data/UFVPY210-augustus.gff3)
+
 
 

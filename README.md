@@ -71,7 +71,7 @@ blastn -query MoMitochondrion.fasta -subject UFVPY210_final.fasta -evalue 1e-50 
 awk '$4/$3 > 0.9 {print $2 ",mitochondrion"}' B71v2sh.UFVPY210.BLAST > UFVPY210_mitochondrion.csv
 ```
 
-![Result CSV file](Data/velvet_81_121_2_output.txt)
+![Result CSV file](Data/UFVPY210_mitochondrion.csv)
 
 
 

@@ -31,6 +31,17 @@ cat UFVPY210_1_paired.fq.gz UFVPY210_2_paired.fq.gz | zgrep '' | zgrep AGGCAGAAA
 
 ## 2. Genome assembly
 
+## Run velvet with a range of k-mer values and step size 10
+```bash
+ sbatch velvetoptimiser_noclean.sh UFVPY210 61 131 10
+```
+We will use this to better narrow down our k-mer values
+
+## Run velvet with more optimal k-mer values and step size 2
+```bash
+sbatch velvetoptimiser_noclean.sh UFVPY210 81 121 2
+```
+
 ## 3. BLASTing my genome
 
 ## 4. Assessing genome completeness using BUSCO

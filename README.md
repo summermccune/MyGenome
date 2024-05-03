@@ -48,6 +48,32 @@ sbatch velvetoptimiser_noclean.sh UFVPY210 81 121 2
 
 ## 3. BLASTing my genome
 
+## Run a blastn search using the sequence in MoRepeats.fasta as the query
+
+```bash
+blastn -subject UFVPY210_nh.fasta -query UFVPY210_nh.fasta -out UFVPY210_genomeBLASTn0 -evalue 1e-20 -outfmt 0
+```
+
+## Record results for outfmt 6
+
+```bash
+blastn -subject UFVPY210_nh.fasta -query UFVPY210_nh.fasta -out MoRepeats.UFVPY210_genomeBLASTn6 -evalue 1e-20 -outfmt 6
+```
+
+## BLASTing against the mitochondrial genome and the B71v2sh reference genome
+
+
+```bash
+blastn -query MoMitochondrion.fasta -subject UFVPY210_final.fasta -evalue 1e-50 -max_target_seqs 20000 -outfmt '6 qseqid sseqid slen length qstart qend sstart sed btop' -out MoMitochondrion.MyGenome.BLAST
+```
+
+```bash
+awk '$4/$3 > 0.9 {print $2 ",mitochondrion"}' B71v2sh.UFVPY210.BLAST > UFVPY210_mitochondrion.csv
+```
+
+
+
+
 ## 4. Assessing genome completeness using BUSCO
 
 ## 5. Gene prediction

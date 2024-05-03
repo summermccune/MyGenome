@@ -37,7 +37,7 @@ cat UFVPY210_1_paired.fq.gz UFVPY210_2_paired.fq.gz | zgrep '' | zgrep AGGCAGAAA
 ```
 We will use this to better narrow down our k-mer values
 Output log file from this run:
-![velvet_output1.txt](MyGenome/Data/velvet_61_121_output.txt)
+![Output](Data/velvet_61_131_10_output.txt)
 
 ## Run velvet with more optimal k-mer values and step size 2
 ```bash

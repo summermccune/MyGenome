@@ -36,7 +36,8 @@ cat UFVPY210_1_paired.fq.gz UFVPY210_2_paired.fq.gz | zgrep '' | zgrep AGGCAGAAA
  sbatch velvetoptimiser_noclean.sh UFVPY210 61 131 10
 ```
 We will use this to better narrow down our k-mer values
-
+Output log file from this run:
+!(/Data/velvet_61_121_output.txt)
 ## Run velvet with more optimal k-mer values and step size 2
 ```bash
 sbatch velvetoptimiser_noclean.sh UFVPY210 81 121 2

@@ -73,11 +73,30 @@ awk '$4/$3 > 0.9 {print $2 ",mitochondrion"}' B71v2sh.UFVPY210.BLAST > UFVPY210_
 
 ![Result CSV file](Data/UFVPY210_mitochondrion.csv)
 
-
-
-
-
 ## 4. Assessing genome completeness using BUSCO
 
 ## 5. Gene prediction
+
+## Running SNAP
+
+```bash
+ snap-hmm Moryzae.hmm UFVPY210_final.fasta > UFVPY210-snap.zff
+```
+
+## Use fathom to compute statistics from the ZFF and FASTA files
+```bash
+ fathom UFVPY210-snap.zff UFVPY210_final.fasta -gene-stats
+```
+
+## making GFF file in the older GFF2 format
+
+```bash
+ snap-hmm Moryzae.hmm UFVPY210_final.fasta -gff > UFVPY210-snap.gff2
+```
+
+## Running Augustus
+```bash
+augustus --species=magnaporthe_grisea --gff3=on --singlestrand=true --progress=true ../snap/UFVPY210_final.fasta > UFVPY210-augustus.gff3
+```
+
 

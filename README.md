@@ -75,6 +75,18 @@ awk '$4/$3 > 0.9 {print $2 ",mitochondrion"}' B71v2sh.UFVPY210.BLAST > UFVPY210_
 
 ## 4. Assessing genome completeness using BUSCO
 
+## Get BuscoSingularity.sh
+
+```bash
+scp SLURM_SCRIPTS/BuscoSingularity.sh sfmc225/
+```
+
+## Run BUSCO
+
+```bash
+sbatch /project/farman_s24cs485g/SLURM_SCRIPTS/BuscoSingularity.sh UFVPY210.fasta
+```
+
 ## 5. Gene prediction
 
 ## Running SNAP
@@ -88,7 +100,7 @@ awk '$4/$3 > 0.9 {print $2 ",mitochondrion"}' B71v2sh.UFVPY210.BLAST > UFVPY210_
  fathom UFVPY210-snap.zff UFVPY210_final.fasta -gene-stats
 ```
 
-## making GFF file in the older GFF2 format
+## Making GFF file in the older GFF2 format
 
 ```bash
  snap-hmm Moryzae.hmm UFVPY210_final.fasta -gff > UFVPY210-snap.gff2
@@ -98,7 +110,15 @@ awk '$4/$3 > 0.9 {print $2 ",mitochondrion"}' B71v2sh.UFVPY210.BLAST > UFVPY210_
 ```bash
 augustus --species=magnaporthe_grisea --gff3=on --singlestrand=true --progress=true ../snap/UFVPY210_final.fasta > UFVPY210-augustus.gff3
 ```
-![Augustus result](Data/UFVPY210-augustus.gff3)
+
+## Running MAKER
+```bash
+gff3_merge -d UFVPY210.maker.output/UFVPY210_master_datastore_index.log -o UFVPY210-annotations.gff
+```
+
+![Resulting output](Data/UFVPY210-annotations.gff)
+
+
 
 
 

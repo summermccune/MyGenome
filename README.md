@@ -116,8 +116,6 @@ augustus --species=magnaporthe_grisea --gff3=on --singlestrand=true --progress=t
 gff3_merge -d UFVPY210.maker.output/UFVPY210_master_datastore_index.log -o UFVPY210-annotations.gff
 ```
 
-![Resulting output](Data/UFVPY210-annotations.gff)
-
 
 
 

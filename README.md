@@ -12,7 +12,7 @@ fastqc &
 Load F1 and R1 datasets into GUI interface
 Take screenshots of output files:
 
-![Folder for screenshots](/data/fastqc/ss1.png)
+![Folder for screenshots](Data/fastqc)
 
 ## Ran trimmomatic
 ```bash
